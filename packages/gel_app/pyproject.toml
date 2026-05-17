@@ -1,0 +1,19 @@
+[project]
+name = "gel-app"
+version = "0.1.0"
+description = "PySide6 desktop GUI for the gel electrophoresis labeller"
+requires-python = ">=3.11"
+dependencies = ["pyside6", "gel-core"]
+
+[tool.uv.sources]
+gel-core = { workspace = true }
+
+# NOTE: [tool.briefcase] packaging config is owned by Subtask 8 and is
+# intentionally not authored here. Do not add it in this subtask.
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gel_app"]
